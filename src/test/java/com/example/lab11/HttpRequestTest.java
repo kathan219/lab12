@@ -23,9 +23,11 @@ class HttpRequestTest {
     void automateDoubleNumber() throws Exception {
 
         int numberToDouble = 5;
+        int originalResult = 10;
         String url = "http://localhost:" + port + "/double?number=" + numberToDouble;
+        System.out.println(url);
         Integer response = restTemplate.getForObject(url,Integer.class);
-        assertThat(response).isEqualTo(numberToDouble * 2);
+        assertThat(response).isEqualTo(originalResult);
 
     }
 
